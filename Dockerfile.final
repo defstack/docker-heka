@@ -7,4 +7,5 @@ RUN echo "===> Adding dependency..." \
 ADD heka-0_11_0-linux-amd64.tar.gz /
 RUN mv /heka-0_11_0-linux-amd64 /heka
 
-ENV PATH=/heka/bin
+VOLUME ["/etc/heka", "/logs"]
+ENTRYPOINT ["/heka/bin/hekad"]
