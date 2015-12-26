@@ -1,0 +1,10 @@
+FROM alpine:3.3
+
+RUN echo "===> Adding dependency..." \
+    && apk add --update geoip \
+    &&  rm -rf /var/cache/apk/*
+
+ADD heka-0_11_0-linux-amd64.tar.gz /
+RUN mv /heka-0_11_0-linux-amd64 /heka
+
+ENV PATH=/heka/bin
