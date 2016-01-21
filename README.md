@@ -1,2 +1,5 @@
 # docker-heka
-heka docker image based alpine.
+
+```
+./build-docker.sh
+```
