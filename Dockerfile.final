@@ -4,8 +4,8 @@ RUN echo "===> Adding dependency..." \
     && apk add --update geoip \
     &&  rm -rf /var/cache/apk/*
 
-ADD heka-0_11_0-linux-amd64.tar.gz /
-RUN mv /heka-0_11_0-linux-amd64 /heka
+ADD heka-0_10_0-linux-amd64.tar.gz /
+RUN mv /heka-0_10_0-linux-amd64 /heka
 
-VOLUME ["/etc/heka", "/logs"]
-ENTRYPOINT ["/heka/bin/hekad"]
+VOLUME ["/etc/heka", "/var/logs/heka", "/heka/share/heka/bro"]
+CMD ["/heka/bin/hekad"]
