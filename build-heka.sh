@@ -13,5 +13,5 @@ cd heka
 git checkout v0.10.0
 
 cd $HEKA_SOURCE && source build.sh
-cd build && make package
+cd $HEKA_SOURCE/build && make package
 cp -f -v heka-0_10_0-linux-amd64.tar.gz $FINAL_DIR

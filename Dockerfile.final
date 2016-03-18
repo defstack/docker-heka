@@ -1,7 +1,8 @@
 FROM alpine:3.3
 
 RUN echo "===> Adding dependency..." \
-    && apk add --update geoip bash \
+    && sed -i "s/dl-4\.alpinelinux\.org/repos\.lax-noc\.com/g" /etc/apk/repositories \
+    && apk add --update geoip bash tar \
     && rm -rf /var/cache/apk/*
 
 COPY heka-0_10_0-linux-amd64.tar.gz entrypoint.sh /
