@@ -11,4 +11,4 @@ RUN tar zxvf heka-0_10_0-linux-amd64.tar.gz -C /usr --strip=1 \
     && rm /heka-0_10_0-linux-amd64.tar.gz
 
 VOLUME ["/var/heka/input", "/var/heka/run", "/usr/share/heka/local"]
-ENTRYPOINT ["/entrypoint.sh"]
+CMD ["/entrypoint.sh"]
