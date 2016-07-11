@@ -1,7 +1,6 @@
-FROM alpine:3.3
+FROM alpine:3.4
 
 RUN echo "===> Adding dependency..." \
-    && sed -i "s/dl-4\.alpinelinux\.org/repos\.lax-noc\.com/g" /etc/apk/repositories \
     && apk add --update geoip bash tar \
     && rm -rf /var/cache/apk/*
 
