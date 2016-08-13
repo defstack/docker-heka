@@ -1,3 +1,5 @@
+DEPRECATED: Because heka is deprecated. 
+
 # docker-heka
 
 ```
